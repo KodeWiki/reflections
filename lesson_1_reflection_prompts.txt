@@ -1,0 +1,97 @@
+How did viewing a diff between two versions of a file help you see the bug that
+was introduced?
+
+    Fill in your answer here
+
+How could having easy access to the entire history of a file make you a more
+efficient programmer in the long term?
+
+    Fill in your answer here
+
+What do you think are the pros and cons of manually choosing when to create a
+commit, like you do in Git, vs having versions automatically saved, like Google
+docs does?
+
+    Fill in your answer here
+
+Why do you think some version control systems, like Git, allow saving multiple
+files in one commit, while others, like Google Docs, treat each file separately?
+
+    Fill in your answer here
+
+How can you use the commands git log and git diff to view the history of files?
+
+    Fill in your answer here
+
+How might using version control make you more confident to make changes that
+could break something?
+
+    Fill in your answer here
+
+Now that you have your workspace set up, what do you want to try using Git for?
+
+    Fill in your answer here
+
+ -------------------------------------------
+
+ git log : 	see a list of all commits in the given directory in
+ 			which this command was invoked.
+ 			Note that this command can only be used on folder which
+ 			are under version control using git.
+ 			'HEAD' : name for the latest commit_id at which git is
+ 			currently in your local box.
+
+ git log --stat
+ 			along with the normal log it shows which files were 
+ 			changed, along the number of lines inserted and deleted
+ 			with respect to the previos commit
+
+ git diff old_commit_id old_commit_id
+ 			outputs the difference b/w the old and new commit in
+ 			unified format
+
+
+ git clone url_for_repository
+ 			checking out a new repository in your computer
+
+ git config --global color.ui auto
+ 			get diffs having different colors for deletions and 
+
+ git checkout commit_id
+ 			git will restore itself to a given commit_id, making
+ 			the 'HEAD' to given commit_id (backward or forward)
+
+ git init
+ 			to initialize any given directory as a git repo.
+ 			
+ 			running 'git log' command on recently initialized directory
+ 			will give error, saying there is no head as there are no
+ 			commits yet
+
+ 			running 'git status' will give  output 'initial commit',
+ 			and will show the folders and files that are uncommited (to be committed once a commit is made.)
+
+ git status
+ 			version control status of all the files in the repository.
+ 			(equivalent of svn st?)
+
+ git add file_name (or folder_name)
+ 			add a new file or folder in the staging area 
+
+
+
+ Question
+ 	1) 	Is .git file only stored the top level of a project ? If that
+ 		is true then can we do git operations on the inside directories.
+ 		
+ 	2) 	What does 'branch master' mean
+
+
+
+
+
+
+
+
+
+
