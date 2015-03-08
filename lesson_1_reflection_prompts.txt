@@ -112,6 +112,17 @@ Now that you have your workspace set up, what do you want to try using Git for?
  			commits all the changes that has been to the staging area.
  			Any changes in the workspace that in the workspace not 
  			added to staging area will not be added.
+
+ git reset <file_name> <folder_name>
+ 			if a file has been added to staging area (new or modified)
+ 			then that unstaged using this. Note that the changes will be restored to workspace and not lost
+
+ git checkout <file_name>
+ 			If a file is modified in workspace then the changes can be
+ 			undone by using this command. Note that all the changes in
+ 			the workspace will be lost. 
+ 			if there is a newly added file in the workspace (untracked)
+ 			and it is to removed then just 'rm -rf <file_name>'
  
  git reset --hard
  			reverts all the changes in both workspace and staging area.
@@ -148,13 +159,16 @@ Note :
 	1) 	.git folder is only stored at the top level folder of a repo,
 		and the underlying folders do not have this folder. Although
 		we can use git commands in the underlying folders as well.
-	2) 	A folder can directly be added into staging araa using 
-		'git add' command. Doing so adds all the underlying files into the staging area. 
+
+	2) 	A folder can directly be added into staging area using 
+		'git add' command. Doing so adds all the underlying files into the staging area.
+
 	3)	In order to commit a folder
 			- 	first do a 'git init' on that folder
 			-	then add the respective files and folders to the staging
 				area
 			-	'git commit'
+
  	4)	Modified changes have to be added first to staging area,
  		and then commited.
 
