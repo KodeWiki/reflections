@@ -46,20 +46,19 @@ Now that you have your workspace set up, what do you want to try using Git for?
  			changed, along the number of lines inserted and deleted
  			with respect to the previos commit
 
- git diff old_commit_id old_commit_id
+ git diff old_commit_id new_commit_id
  			outputs the difference b/w the old and new commit in
  			unified format
-
 
  git clone url_for_repository
  			checking out a new repository in your computer
 
- git config --global color.ui auto
- 			get diffs having different colors for deletions and 
-
  git checkout commit_id
  			git will restore itself to a given commit_id, making
  			the 'HEAD' to given commit_id (backward or forward)
+
+ git checkout master
+ 			checks out the latest version of the repo
 
  git init
  			to initialize any given directory as a git repo.
@@ -75,9 +74,52 @@ Now that you have your workspace set up, what do you want to try using Git for?
  			version control status of all the files in the repository.
  			(equivalent of svn st?)
 
+ git diff
+ 			shows the difference b/w the working directory and staging
+ 			area, i.e. the changes still lying in workspace not added
+ 			to staging area.
+ 			'+' denotes the additive changes in workspace not added in 
+ 			staging area, '-' the decrimental in workspace with respect
+ 			to staging area (+ve for workspace)
+
+ git diff --staged
+ 			shows the difference b/w the staging area and the 
+ 			current version of repo(having the last commited changes)
+ 			(+ve for staging area)
+
  git add file_name (or folder_name)
  			add a new file or folder in the staging area, so that 
  			they can be committed when a commit is made.
+
+ git commit
+ 			commits all the changes that has been to the staging area.
+ 			Any changes in the workspace that in the workspace not 
+ 			added to staging area will not be added.
+ 
+ git reset --hard
+ 			reverts all the changes in both workspace and staging area.
+ 			Be careful while using this as the changes cannot be 
+ 			restored back.
+
+ git branch label_name
+ 			creating a new branch with name as 'label_name'
+
+ git branch
+ 			outputs all the branches of the repo available in local 
+ 			machine
+ 			The branch which has '*' in front of it is the one in 
+ 			which changes are made is made when commited. We call that
+ 			the 'checked out' branch. By default it is the master 
+ 			branch.
+
+ git checkout branch_label_name
+ 			changing the checked out branch
+
+ git log --graph --oneline branch_a branch_b
+
+ git config --global color.ui auto
+ 			get diffs having different colors for deletions and 
+ 			additions
 
  git config commands
  	git config --global core.editor "subl -n -w"
@@ -96,21 +138,12 @@ Note :
 			-	then add the respective files and folders to the staging
 				area
 			-	'git commit'
-
-	4)	git con
+ 	4)	Modified changes have to be added first to staging area,
+ 		and then commited.
 
  Question
  	1) 	What does 'branch master' mean ?
  	2) 	what about adding a folder into the staging area, some of whose
  		files have already been added.
- 	3)	
-
-
-
-
-
-
-
-
-
-
+ 	3)	Do we modified changes have to be added first to stagin area,
+ 		and then commited.
