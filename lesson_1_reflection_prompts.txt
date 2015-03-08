@@ -74,23 +74,6 @@ Now that you have your workspace set up, what do you want to try using Git for?
  			version control status of all the files in the repository.
  			(equivalent of svn st?)
 
- 'modified' 	
- 			file already committed has been modifed 
- 
- 'new file'	
- 			a new file added, yet to be committed
- 
- 'Changes to be committed section'
- 			files added to the staging area (modified or new_files)
- 
- 'untracked files'
- 			newly added files in workspace not in staging area
-
- 'Changes to be committed'
- 			files not added to statging area are shown
-
-
-
  git diff
  			shows the difference b/w the working directory and staging
  			area, i.e. the changes still lying in workspace not added
@@ -171,6 +154,25 @@ Note :
 
  	4)	Modified changes have to be added first to staging area,
  		and then commited.
+
+ 	5) 	Different terminologies used in output of 'git status'
+
+	 	'modified' 	
+	 			file already committed has been modifed 
+	 
+		 'new file'	
+		 			a new file added, yet to be committed
+		 
+		 'Changes to be committed section'
+		 			files added to the staging area (modified or 
+		 			new_files)
+		 
+		 'untracked files'
+		 			newly added files in workspace not in staging area
+
+		 'Changes to be committed'
+		 			files not added to statging area are shown
+
 
  Question
  	1) 	What does 'branch master' mean ?
