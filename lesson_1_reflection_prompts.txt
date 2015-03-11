@@ -74,23 +74,6 @@ Now that you have your workspace set up, what do you want to try using Git for?
  			version control status of all the files in the repository.
  			(equivalent of svn st?)
 
- 'modified' 	
- 			file already committed has been modifed 
- 
- 'new file'	
- 			a new file added, yet to be committed
- 
- 'Changes to be committed section'
- 			files added to the staging area (modified or new_files)
- 
- 'untracked files'
- 			newly added files in workspace not in staging area
-
- 'Changes to be committed'
- 			files not added to statging area are shown
-
-
-
  git diff
  			shows the difference b/w the working directory and staging
  			area, i.e. the changes still lying in workspace not added
@@ -111,7 +94,8 @@ Now that you have your workspace set up, what do you want to try using Git for?
  git commit
  			commits all the changes that has been to the staging area.
  			Any changes in the workspace that in the workspace not 
- 			added to staging area will not be added.
+ 			added to staging area will not be committed. The changes
+ 			in the workspace will remain the way they were.
 
  git reset <file_name> <folder_name>
  			if a file has been added to staging area (new or modified)
@@ -129,19 +113,36 @@ Now that you have your workspace set up, what do you want to try using Git for?
  			Be careful while using this as the changes cannot be 
  			restored back.
 
- git branch label_name
- 			creating a new branch with name as 'label_name'
 
  git branch
  			outputs all the branches of the repo available in local 
  			machine
  			The branch which has '*' in front of it is the one in 
- 			which changes are made is made when commited. We call that
+ 			which changes are made when commited. We call that
  			the 'checked out' branch. By default it is the master 
  			branch.
 
+ git branch label_name
+ 			creating a new branch with name as 'label_name'
+
  git checkout branch_label_name
  			changing the checked out branch
+
+ git checkout -b new_branch_name
+ 			equivalent to running the following 2 commands
+ 				git branch new_branch_name
+ 				git checkout new_branch_name
+
+ git merge branch_a branch_b
+ 			Merges 'branch_b', and 'branch_a' into branch_a
+
+ 			When 2 branches are merged then the commits of the branches
+ 			are shown interleaved in 'git log' sorted by time.
+ 			So it becomes difficult to see the difference b/w a commit
+ 			and its parent to understand what exactly changed.
+
+ git show commit_id
+ 			shows diff b/w the commit_id and its parent commit
 
  git log --graph --oneline branch_a branch_b
 
@@ -163,7 +164,7 @@ Note :
 	2) 	A folder can directly be added into staging area using 
 		'git add' command. Doing so adds all the underlying files into the staging area.
 
-	3)	In order to commit a folder
+	3)	In order to bring a folder into git version control
 			- 	first do a 'git init' on that folder
 			-	then add the respective files and folders to the staging
 				area
@@ -172,12 +173,39 @@ Note :
  	4)	Modified changes have to be added first to staging area,
  		and then commited.
 
+ 	5) 	Different terminologies used in output of 'git status'
+
+	 	'modified' 	
+	 			file already committed has been modifed 
+	 
+		 'new file'	
+		 			a new file added, yet to be committed
+		 
+		 'Changes to be committed section'
+		 			files added to the staging area (modified or 
+		 			new_files)
+		 
+		 'untracked files'
+		 			newly added files in workspace not in staging area
+
+		 'Changes not staged for commit'
+		 			modified files not added to statging area
+
+	6)	Let's say a repo has 5 commits [ having commit ids 1, 2 ,3,
+		4, 5] and it is currently at commit id 5 (i.e. the latest).
+		Now let's say that we moved to commit id 4 by checking it out.
+		Now at this point let's make another commit say with id 4-a.
+		And after that if we move to master (i.e.) commit id 5 by 
+		'git checkout master' then 4-a will be lost.
+		Using git log in such a case will only show [1, 2, 3, 4, 5],
+		as the commit 4-a is not listed in the any of the branches
+		it will not show up in the list. However if one note's down
+		its commit id (in this case 4-a) then we certianly can reach it.
+
+
  Question
  	1) 	What does 'branch master' mean ?
  	2) 	what about adding a folder into the staging area, some of whose
  		files have already been added.
  	3)	Do we modified changes have to be added first to stagin area,
  		and then commited.
-
-commit 1
-commit 1-main
