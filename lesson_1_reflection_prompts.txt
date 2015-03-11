@@ -153,7 +153,7 @@ Note :
 	2) 	A folder can directly be added into staging area using 
 		'git add' command. Doing so adds all the underlying files into the staging area.
 
-	3)	In order to commit a folder
+	3)	In order to bring a folder into git version control
 			- 	first do a 'git init' on that folder
 			-	then add the respective files and folders to the staging
 				area
@@ -177,8 +177,8 @@ Note :
 		 'untracked files'
 		 			newly added files in workspace not in staging area
 
-		 'Changes to be committed'
-		 			files not added to statging area are shown
+		 'Changes not staged for commit'
+		 			modified files not added to statging area
 
 	6)	Let's say a repo has 5 commits [ having commit ids 1, 2 ,3,
 		4, 5] and it is currently at commit id 5 (i.e. the latest).
