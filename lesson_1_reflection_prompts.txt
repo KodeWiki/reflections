@@ -118,7 +118,7 @@ Now that you have your workspace set up, what do you want to try using Git for?
  			outputs all the branches of the repo available in local 
  			machine
  			The branch which has '*' in front of it is the one in 
- 			which changes are made is made when commited. We call that
+ 			which changes are made when commited. We call that
  			the 'checked out' branch. By default it is the master 
  			branch.
 
@@ -132,6 +132,17 @@ Now that you have your workspace set up, what do you want to try using Git for?
  			equivalent to running the following 2 commands
  				git branch new_branch_name
  				git checkout new_branch_name
+
+ git merge branch_a branch_b
+ 			Merges 'branch_b', and 'branch_a' into branch_a
+
+ 			When 2 branches are merged then the commits of the branches
+ 			are shown interleaved in 'git log' sorted by time.
+ 			So it becomes difficult to see the difference b/w a commit
+ 			and its parent to understand what exactly changed.
+
+ git show commit_id
+ 			shows diff b/w the commit_id and its parent commit
 
  git log --graph --oneline branch_a branch_b
 
@@ -196,6 +207,3 @@ Note :
  	1) 	What does 'branch master' mean ?
  	2) 	what about adding a folder into the staging area, some of whose
  		files have already been added.
-
- git 1
- git 1-master
