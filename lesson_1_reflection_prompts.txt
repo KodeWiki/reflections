@@ -207,3 +207,5 @@ Note :
  	1) 	What does 'branch master' mean ?
  	2) 	what about adding a folder into the staging area, some of whose
  		files have already been added.
+
+Adding a line into master file
