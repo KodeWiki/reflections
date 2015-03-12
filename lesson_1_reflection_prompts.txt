@@ -150,6 +150,8 @@ Now that you have your workspace set up, what do you want to try using Git for?
  			get diffs having different colors for deletions and 
  			additions
 
+ git merge
+
  git config commands
  	git config --global core.editor "subl -n -w"
 	git config --global push.default upstream
@@ -209,3 +211,4 @@ Note :
  		files have already been added.
 
 Adding a line into master file
+just for the sake of pushing to github
